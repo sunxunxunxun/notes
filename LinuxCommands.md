@@ -30,15 +30,24 @@ $ ping baidu.com
 $ ping 随便一个ip addr
 ```
 
+**常用命令**
+#### 1. 查看文件夹下文件数
+```
+$ ls dir -l | wc -l
+```
+
 **docker相关**
 ```
 // pull 并运行docker
 $ sudo docker pull xx
 $ sudo docker run -i xx
 // 查看所有docker镜像信息
-$ sudo docker ps -a
+$ sudo docker images -a
+// 启停容器
+$ sudo docker start containerId/containerName
+$ sudo docker stop containerId/containerName
 // 删除docker镜像
-$ sudo docker rmi -f containerId
+$ sudo docker rmi -f imageId
 // 本机与docker互传文件
 $ sudo docker cp local_path contrainerId:dest_path
 $ sudo docker cp contrainerId:dest_path local_path
