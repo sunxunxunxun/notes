@@ -1,5 +1,3 @@
-
-
 **每次启动服务器**
 #### 1. dns设置
 ```
@@ -30,12 +28,20 @@ $ ping baidu.com
 $ ping 随便一个ip addr
 ```
 
-**常用命令**
+**Linu常用命令**
 #### 1. 查看文件夹下文件数
 ```
 $ ls dir -l | wc -l
 ```
-
+#### 2. 终端重定向
+```
+// w, 覆盖
+$ command > file_path  
+// a, 追加
+$ command >> file_path
+// 同时在终端显示和重定向到文件
+$ command | tee file_path
+```
 **docker相关**
 ```
 // pull 并运行docker
