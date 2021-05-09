@@ -8,8 +8,6 @@ nameserver 114.114.114.114
 ```
 #### 2. 网络配置
 因为DHCP设置失效，所以每次重新启动都需要检查静态ip是否分配成功。
-
-
 ```
 // 第一步 查看ip分配情况
 $ ip a  
@@ -42,6 +40,11 @@ $ command >> file_path
 // 同时在终端显示和重定向到文件
 $ command | tee file_path
 ```
+#### 3. 拷贝文件(夹)
+```
+cp ~/documents/xx.txt .
+cp -r ~/documents .
+```
 **docker相关**
 ```
 // pull 并运行docker
@@ -53,11 +56,25 @@ $ sudo docker images -a
 $ sudo docker start containerId/containerName
 $ sudo docker stop containerId/containerName
 // 删除docker镜像
-$ sudo docker rmi -f imageId
+$ sudo docker rmi imageId
+// 删除docker容器
+$ sudo docker rm containerId
+$ sudo docker rm $(sudo docker ps -a -q)  // 删除所有未运行的容器
 // 本机与docker互传文件
-$ sudo docker cp local_path contrainerId:dest_path
+$ sudo docker cp local_path contrainerId:dest_path,                
 $ sudo docker cp contrainerId:dest_path local_path
 ```
+
+**pip相关**
+#### 1. 换源
+```
+$ pip3 install web3 -i https://pypi.tsinghua.edu.cn/simple
+```
+
+**python虚拟环境相关**
+创建venv的命令：`mkvirtualenv -p python3 maian`不能使用，报`No such file or dir: '/home/sunxun/python3'`.
+最后用`mkvirtualenv --python=/usr/bin/python3`创建成功的.
+
 
 **本地服务器配置信息**
 
@@ -76,3 +93,4 @@ $ sudo docker cp contrainerId:dest_path local_path
 [ssh配置](https://blog.csdn.net/future_ai/article/details/81701744)
 [scp传输文件](https://www.cnblogs.com/jiangyao/archive/2011/01/26/1945570.html)     
 [vscode远程连接服务器开发]()
+[python virtualenv安装和使用](https://www.linuxidc.com/Linux/2019-08/160096.htm)
