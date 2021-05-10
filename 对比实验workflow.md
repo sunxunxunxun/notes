@@ -70,5 +70,8 @@ use_of_origin.hex：字节码文件；demo_analyses.dl：自行定义的6种漏�
 - unsecuredValueSend
 - destroyable
 
+### 9. **osiris**
+https://github.com/christoftorres/Osiris
+
 
 ## deeplearning方法
