@@ -67,8 +67,39 @@ $ sudo docker cp contrainerId:dest_path local_path
 
 **pip相关**
 #### 1. 换源
-```
+```shell
 $ pip3 install web3 -i https://pypi.tsinghua.edu.cn/simple
+```
+
+**Linux安装geth客户端（多版本场景）**
+- 如果只安装一个版本，直接apt安装。
+```shell
+$ add-apt-repository -y ppa:ethereum/ethereum
+$ apt-get update
+$ apt-get install ethereum
+```
+会自动安装最新的geth和evm到`/usr/bin/geth`, `/usr/bin/evm`,以后会自动使用这两个可执行文件。
+- 如果不同的项目对evm的版本有要求，需要分别安装不同的版本到`/usr/bin/`, 比如`/usr/bin/geth_1.8.18`  
+1. 下载go-ethereum指定版本的[源码](https://github.com/ethereum/go-ethereum/releases), 并解压、编译。
+```shell
+$ tar -C /usr/local -xzf go1.15.linux-amd64.tar.gz
+$ make all  ##需要生成evm的命令，这里不要make geth
+```
+2. 添加环境变量
+```shell
+$ sudo gedit ~/.bashrc
+## 添加如下两行
+export GOROOT=/usr/local/go
+export PATH=$ PATH:$ GOROOT/bin
+## 生效
+$ source ~/.bashrc
+```
+3. 将geth, evm命令添加到全局
+```shell
+$ sudo cp <local geth path> /usr/bin/geth_x.x.x
+$ sudo cp <local evm path> /usr/bin/evm_x.x.x
+##具体要使用哪个版本的时候
+$ sudo cp /usr/bin/geth_x.x.x /usr/bin/geth
 ```
 
 **python虚拟环境相关**

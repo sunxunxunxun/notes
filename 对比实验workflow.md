@@ -48,6 +48,14 @@ smartcheck -p <path of dir or file>
 
 ### 7. **Ethir**
 https://github.com/costa-group/EthIR
+python2的环境
+安装_solc0.4.25, evm_1.8.18, z3-solver_4.5.1.0, six
+```shell
+##在ethir文件夹下
+$ python2 ethir.py -s xx.sol
+$ python2 ethir.py -s xx.evm -b
+```
+生成几个分析文件到/tmp/costa/，但没有漏洞检测结果。
 
 ### 8. **Vandal**
 https://github.com/usyd-blockchain/vandal
