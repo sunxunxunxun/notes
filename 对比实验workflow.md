@@ -72,6 +72,12 @@ use_of_origin.hex：字节码文件；demo_analyses.dl：自行定义的6种漏�
 
 ### 9. **osiris**
 https://github.com/christoftorres/Osiris
-
+- docker
+```shell
+$ docker pull christoftorres/osiris && docker run -i -t christoftorres/osiris
+$ python osiris/osiris.py -s sourcecode/xxx.sol [-j]  # 标准输出 or 输出json文件到results文件夹
+$ python osiris/osiris.py -s bytecode/xxx -b [-j]
+```
+- 源码
 
 ## deeplearning方法

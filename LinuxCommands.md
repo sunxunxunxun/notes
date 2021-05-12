@@ -45,25 +45,34 @@ $ command | tee file_path
 cp ~/documents/xx.txt .
 cp -r ~/documents .
 ```
+
 **docker相关**
 ```
 // pull 并运行docker
-$ sudo docker pull xx
-$ sudo docker run -i xx
+$ sudo docker pull <image>
+$ sudo docker run -i <image>
 // 查看所有docker镜像信息
 $ sudo docker images -a
 // 启停容器
-$ sudo docker start containerId/containerName
-$ sudo docker stop containerId/containerName
+$ sudo docker start <containerId or containerName>
+$ sudo docker stop <containerId or containerName>
 // 删除docker镜像
 $ sudo docker rmi imageId
 // 删除docker容器
 $ sudo docker rm containerId
 $ sudo docker rm $(sudo docker ps -a -q)  // 删除所有未运行的容器
 // 本机与docker互传文件
-$ sudo docker cp local_path contrainerId:dest_path,                
+$ sudo docker cp local_path contrainerId:dest_path                
 $ sudo docker cp contrainerId:dest_path local_path
 ```
+传文件到docker遇到`unable to execute /usr/bin/docker: Argument list too long`——传输的文件过多，传文件压缩包解决
+
+- 一个docker容器开多个终端
+```shell
+$ docker attach <dockerid>  ##两个终端显示同样的内容
+$ docker exec -it <dockerid> /bin/bash  # 
+```
+
 
 **pip相关**
 #### 1. 换源
