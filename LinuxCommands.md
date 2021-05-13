@@ -115,6 +115,14 @@ $ sudo cp /usr/bin/geth_x.x.x /usr/bin/geth
 创建venv的命令：`mkvirtualenv -p python3 maian`不能使用，报`No such file or dir: '/home/sunxun/python3'`.
 最后用`mkvirtualenv --python=/usr/bin/python3`创建成功的.
 
+**git相关**
+- 提交代码但不显示contribution的解决
+https://www.cnblogs.com/calamus/p/8176084.html
+设置邮箱地址与github一致
+```shell
+$ git config user.name(user.email)  #查看设置
+$ git config user.email <github网页setting里的邮箱地址>
+```
 
 **本地服务器配置信息**
 
@@ -122,6 +130,7 @@ $ sudo cp /usr/bin/geth_x.x.x /usr/bin/geth
 - pip -> python2-pip
 - python3 -> python3.6
 - pip3 -> python3-pip
+
 
 **链接自查**
 

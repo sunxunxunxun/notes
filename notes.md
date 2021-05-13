@@ -2,13 +2,24 @@
 ----
 ## 语法
 ----
-### map
+### unordered_map
+
 #### 1. 遍历
 ```
-map<type1, type2> mp;
-map<type1, type2>::iterator iter;
+unordered_map<type1, type2> mp;
+unordered_map<type1, type2>::iterator iter;
 for (iter = mp.beging(); iter != mp.end(); iter++)
 ```
+#### **unordered_map与map**
+unordered_map: hash散列表
+map: 红黑树
+[两者的比较](https://blog.csdn.net/qq_21997625/article/details/84672775)
+今天做到[一道题](https://leetcode-cn.com/problems/xor-queries-of-a-subarray/)的时候，领悟到了..     
+用到了`unordered_map<pair<int, int>, int>`, 会报错
+- unordered_map的键值只能是基本数据类型，否则需要自定义**哈希值求解**和**键值比较**的方法.
+- 而map是基于红黑树的
+最终改成了`map<pair<int, int>, int>`
+
 ### vector
 #### 1. 初始化
 ```

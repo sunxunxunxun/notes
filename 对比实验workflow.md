@@ -46,7 +46,7 @@ smartcheck -p <path of dir or file>
 
 ### ~~6. **ZEUS**~~ 没开源
 
-### 7. **Ethir**
+### ~~7. **Ethir**~~ 没有漏洞检测结果
 https://github.com/costa-group/EthIR
 python2的环境
 安装_solc0.4.25, evm_1.8.18, z3-solver_4.5.1.0, six
