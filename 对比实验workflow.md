@@ -20,10 +20,9 @@
         
 ```
 ### 1. **oyente**
+https://github.com/enzymefinance/oyente
 docker id: fa80fcb539b3     
 docker内文件结构
-
-待做：把evm_bytecode 和 scripts移到与原始oyente目录并列
 
 ### 2. **mythril**
 ```
@@ -81,3 +80,6 @@ $ python osiris/osiris.py -s bytecode/xxx -b [-j]
 - 源码
 
 ## deeplearning方法
+是否需要做？
+
+### 检测结果分析

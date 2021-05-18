@@ -45,6 +45,11 @@ $ command | tee file_path
 cp ~/documents/xx.txt .
 cp -r ~/documents .
 ```
+#### 4. 重启网卡
+https://blog.csdn.net/marc07/article/details/62885872/
+```shell
+$ /etc/init.d/networking restart
+```
 
 **docker相关**
 ```
