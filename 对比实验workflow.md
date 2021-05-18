@@ -77,9 +77,16 @@ $ docker pull christoftorres/osiris && docker run -i -t christoftorres/osiris
 $ python osiris/osiris.py -s sourcecode/xxx.sol [-j]  # 标准输出 or 输出json文件到results文件夹
 $ python osiris/osiris.py -s bytecode/xxx -b [-j]
 ```
-- 源码
+### 10. **manticore**
+https://github.com/trailofbits/manticore    
+源码分析会出错，字节码分析是把字节码写死在代码里面的. ————后续再看要不要做
 
 ## deeplearning方法
 是否需要做？
 
 ### 检测结果分析
+1. 每个工具的检测结果形成一个txt文件    
+
+2. 汇总每个合约的漏洞检测结果
+3. 分类
+4. 分析

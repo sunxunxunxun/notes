@@ -75,7 +75,7 @@ $ sudo docker cp contrainerId:dest_path local_path
 - 一个docker容器开多个终端
 ```shell
 $ docker attach <dockerid>  ##两个终端显示同样的内容
-$ docker exec -it <dockerid> /bin/bash  # 
+$ docker exec -it <dockerid> /bin/bash  # 运行两个终端
 ```
 
 
@@ -121,13 +121,27 @@ $ sudo cp /usr/bin/geth_x.x.x /usr/bin/geth
 最后用`mkvirtualenv --python=/usr/bin/python3`创建成功的.
 
 **git相关**
-- 提交代码但不显示contribution的解决
-https://www.cnblogs.com/calamus/p/8176084.html
+- 提交代码但不显示contribution的解决    
+https://www.cnblogs.com/calamus/p/8176084.html  
 设置邮箱地址与github一致
 ```shell
 $ git config user.name(user.email)  #查看设置
 $ git config user.email <github网页setting里的邮箱地址>
 ```
+- git proxy失效的解决
+本地物理机重启后，ip地址发生变化，导致虚拟机的git proxy失效。
+```shell
+ ## 查询代理
+$ git config --global http.proxy[https.proxy]
+$ git config --local http.proxy[https.proxy]
+## 设置代理
+$ git config --global http.proxy[https.proxy] 192.168.1.31:1081     # ip地址是本机地址，端口需要查看，一般1080/1081
+$ git config --local http.proxy[https.proxy] 192.168.1.31:1081
+## 取消代理
+$ git config --global --unset http.proxy[https.proxy]
+$ git config --local --unset http.proxy[https.proxy]
+```
+local(局部代理):在git clone仓库内执行.
 
 **本地服务器配置信息**
 
