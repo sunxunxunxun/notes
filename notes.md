@@ -94,6 +94,10 @@ accumulate(arr.begin(), arr.end(), addtition);
 相同点：都是将数字字符串转换成int；头文件都是ctring；
 不同点：atoi参数是const char*（如果是string的话需要用c_str转换），而stoi是const string*；atoi没有越界检查，越界了直接输出边界，而stoi越界了会runtime error
 
+# Python
+### list
+#### 1. 声明指定长度的list  
+https://www.jb51.net/article/142499.htm
 
 # JAVA
 ---
