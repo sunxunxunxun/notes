@@ -98,7 +98,10 @@ accumulate(arr.begin(), arr.end(), addtition);
 ### list
 #### 1. 声明指定长度的list  
 https://www.jb51.net/article/142499.htm
-
+#### 2. 判断类型
+```python
+if type(a) is int:
+```
 # JAVA
 ---
 ## 语法
