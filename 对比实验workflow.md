@@ -86,7 +86,21 @@ https://github.com/trailofbits/manticore
 
 ### 检测结果分析
 1. 每个工具的检测结果形成一个txt文件    
+完成
+- mythril   
+0x9dc971efd1774d442d2f945152ef917ba04a3e4e
+0xadc5c669aa3abcbaf54d703c03625d6b3a30ec55#1#0#0#0#0#1#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+- osiris    
+0x5ab777e1e73477a9620af40809bb84779385a143#80.4#0#0#1#1#0#0#1#0#50.0347781181#0#0#0#72#0
+- oyente    
+0xc56efab08d635f8fe0831319fe88539c5bdc3490#18.5#1#0#0#0#0#0
+- smartcheck    
+0xf32c56d211179fbc6d95de7630ca0eed1c55f682#SOLIDITY_VISIBILITY :14#SOLIDITY_SAFEMATH :3#SOLIDITY_DEPRECATED_CONSTRUCTIONS :3#SOLIDITY_PRAGMAS_VERSION :1#SOLIDITY_EXTRA_GAS_IN_LOOPS :3#SOLIDITY_ADDRESS_HARDCODED :1#SOLIDITY_UPGRADE_TO_050 :6#SOLIDITY_GAS_LIMIT_IN_LOOPS :3
+- vandal    
+0xdd6433e9fa990c232f6a056db1bb41726300c8a7#1#0#0#1#0#0
 
-2. 汇总每个合约的漏洞检测结果
-3. 分类
+解决**每个检测工具漏洞表示差异**的问题
+2. 分类     
+先拿到检测交集的合约addr, 再分类，最好用deeplearning
+3. 汇总每个合约的漏洞检测结果
 4. 分析

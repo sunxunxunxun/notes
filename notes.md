@@ -25,6 +25,11 @@ map: 红黑树
 ```
 vector<vector<int>> dp(n, vector<int> (m, INT_MAX))
 ```
+从原始vector复制
+```c++
+vector<int> nums1;
+vector<int> nums2(nums1);   // 元素个数和值都相同
+```
 #### 2. 常用函数
 ```c++
 vector<int> nums;
