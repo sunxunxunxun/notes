@@ -46,9 +46,14 @@ s.empty();   // stack.empty()
 s.back();   // stack.top()
 s.push_back();  //stack.push()
 s.pop_back();   //stack.pop()
-
 ```
-#### 2. 与数字字符串的转换
+[字符串与栈的结合](https://leetcode-cn.com/problems/reverse-substrings-between-each-pair-of-parentheses/)
+#### 2. 类似于vector的方法
+```c++
+string str;
+reverse(str.begin(), str.end());
+```
+#### 3. 与数字字符串的转换
 ```c++
 x = 10;
 s = to_string(x); // "10"
