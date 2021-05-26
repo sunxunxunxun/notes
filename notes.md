@@ -112,6 +112,7 @@ https://www.jb51.net/article/142499.htm
 ```python
 if type(a) is int:
 ```
+
 # JAVA
 ---
 ## 语法
