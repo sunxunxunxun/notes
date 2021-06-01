@@ -102,5 +102,9 @@ https://github.com/trailofbits/manticore
 解决**每个检测工具漏洞表示差异**的问题
 2. 分类     
 先拿到检测交集的合约addr, 再分类，最好用deeplearning
+- common addr   
+smartcheck用的sourcecode, 其它用的bytecode, 提取数据集的时候没有配套~~
+已解决, 但最后只有1672个
+- 
 3. 汇总每个合约的漏洞检测结果
 4. 分析
