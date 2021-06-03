@@ -124,6 +124,15 @@ $ sudo cp /usr/bin/geth_x.x.x /usr/bin/geth
 最后用`mkvirtualenv --python=/usr/bin/python3`创建成功的.
 
 **git相关**
+- 创建git repository    
+```shell
+$ git init
+$ git remote add origin <链接>
+$ git pull origin master
+$ git add *
+$ git commin -m "<notes>"
+$ git push origin master
+```
 - 提交代码但不显示contribution的解决    
 https://www.cnblogs.com/calamus/p/8176084.html  
 设置邮箱地址与github一致
