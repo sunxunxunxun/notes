@@ -53,6 +53,18 @@ https://blog.csdn.net/marc07/article/details/62885872/
 ```shell
 $ /etc/init.d/networking restart
 ```
+#### 5. 进程与端口      
+- 查看端口使用情况
+```shell
+$ netstat -apn
+$ netstat -apn | grep 8848
+```
+- 查看所有进程
+```shell
+$ ps -a
+$ ps -a | grep 88
+$ kill <pid>
+```
 
 **docker相关**
 ```
