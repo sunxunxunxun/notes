@@ -13,4 +13,21 @@ todo
 - mac上安装idea
 - server上发布配置，本地java程序获取
 
+**20210607**
+- 创建微服务    
+1. 勾选spring web和openferign两个微服务的必要组件.
+2. 创建root服务的pom.xml
+- 安装mysql, redis
+1. 安装docker
+https://www.runoob.com/docker/macos-docker-install.html
+```shell
+$ brew install --cask --appdir=/Applications docker
+```
+2. docker安装mysql
+在[docker hub]()中找到搜索mysql
+```shell
+$ docker pull mysql:5.7
+```
+
+
 [exlipse编辑Linux服务器上的文件](https://blog.csdn.net/hehuihh/article/details/80667014)
