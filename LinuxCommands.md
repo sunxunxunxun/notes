@@ -167,6 +167,7 @@ $ git config --local --unset http.proxy[https.proxy]
 ```
 local(局部代理):在git clone仓库内执行.
 
+
 **本地服务器配置信息**
 
 - python, python2 -> python2.7
