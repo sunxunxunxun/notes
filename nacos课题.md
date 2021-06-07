@@ -24,10 +24,21 @@ https://www.runoob.com/docker/macos-docker-install.html
 $ brew install --cask --appdir=/Applications docker
 ```
 2. docker安装mysql
-在[docker hub]()中找到搜索mysql
+- 在[docker hub]()中找到搜索mysql
 ```shell
 $ docker pull mysql:5.7
 ```
-
+- 创建mysql实例
+```shell
+sudo docker run -p 3306:3306 --name mysql \
+-v /Users/sunxun/Documents/mydata/mysql/log:/var/log/mysql \
+-v /Users/sunxun/Documents/mydata/mysql/data:/var/lib/mysql \
+-v /Users/sunxun/Documents/mydata/mysql/conf:/etc/mysql \
+-e MYSQL_ROOT_PASSWORD=root \
+-d mysql:5.7
+```
+- 下载数据库连接工具        
+下载了mac上的sqlpro, 但不开源需破解————>待做
+- docker安装redis
 
 [exlipse编辑Linux服务器上的文件](https://blog.csdn.net/hehuihh/article/details/80667014)
