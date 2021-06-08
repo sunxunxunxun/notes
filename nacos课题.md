@@ -103,4 +103,15 @@ https://www.jianshu.com/p/214baa511f2e
 ### 五.建立后台管理系统
 - 获取脚手架        
 [人人开源](https://gitee.com/renrenio)中clone renren-fast(后台管理系统)和renren-fast-vue(前端)，删除.git目录后复制到mall项目目录下。
-- 
+- 运行项目      
+修改文件renren-fast/src/main/resources/application-dev.yml中的配置.
+```xml
+url: jdbc:mysql://localhost:3306/mall_admin?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+username: root
+password: root
+```
+运行renren-fast/src/main/java/io/renren/RenrenApplication.java，可看到控制台输出信息.
+最后打开浏览器，输入```localhost:8080/renren-fast```可看到访问信息.
+
+### 六.安装前端开发环境
+- 已安装好nodejs
