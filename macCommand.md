@@ -7,5 +7,8 @@ https://blog.csdn.net/weixin_35757704/article/details/112133562
 - 安装docker
 https://www.runoob.com/docker/macos-docker-install.html
 ```shell
+## 安装
 $ brew install --cask --appdir=/Applications docker
+## 启动
+$ open /Applications/Docker.app
 ```
