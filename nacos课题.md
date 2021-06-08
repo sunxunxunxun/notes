@@ -70,6 +70,7 @@ $ docker exec -it redis redis-cli
 ```
 否则更改默认持久化. 在redis.conf中添加```appendonly yes```. 然后重启.
 - 安装一个redis可视化客户端————待做     
+https://www.jianshu.com/p/214baa511f2e
 
 ### 二. 配置maven
 #### 1. 设置阿里云镜像
@@ -92,3 +93,14 @@ $ docker exec -it redis redis-cli
 - 在setting里设置使用的setting.xml文件
 https://www.jianshu.com/p/214baa511f2e
 [exlipse编辑Linux服务器上的文件](https://blog.csdn.net/hehuihh/article/details/80667014)
+
+### 四.创建数据库
+- docker运行mysql
+- 使用SQLPro Studio连接数据库(localhost就行)
+- 从sql文件创建数据库       
+[sql文件](https://github.com/cosmoswong/gulimall/tree/master/doc/sql)
+
+### 五.建立后台管理系统
+- 获取脚手架        
+[人人开源](https://gitee.com/renrenio)中clone renren-fast(后台管理系统)和renren-fast-vue(前端)，删除.git目录后复制到mall项目目录下。
+- 
