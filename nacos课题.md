@@ -194,7 +194,7 @@ tablePrefix=pms_  #表前缀
 
 **待解决**
 - mysql数据库表中文乱码问题
-- 运行app后访问数据```This application has no explicit mapping for /error, so you are seeing this as a fallback.```的问题
+- ~~运行app后访问数据```This application has no explicit mapping for /error, so you are seeing this as a fallback.```的问题~~<br>
 **快捷键**
 idea
 shift+cmd+B: go to implementation
