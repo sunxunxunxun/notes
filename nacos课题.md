@@ -123,21 +123,21 @@ $ npm config set registry http://registry.npm.taobao.org/
 npm install报```Not Found - GET https://registry.npm.taobao.org/@types/strip-json-comments/-/strip-json-comments-3.0.0.tgz - [not_found] document not found```
 将nodejs[更换为10.16.3版本](https://www.cnblogs.com/conserdao/p/6876381.html)解决
 ### 七.逆向工程搭建
-- 前后端联调启动
+1. 前后端联调启动
 后台运行renrenApplication, 前端输入```npm run dev```, 打开浏览器后登录系统.
-- 逆向生成代码
+2. 逆向生成代码
 通过renren-generator逆向生成项目基本代码，以product为例.
-1. 添加renren-generator文件夹
+- 添加renren-generator文件夹
 clone renren-generator并添加到项目mall文件夹下.
 mall项目pom.xml文件中加入module.
-2. 更改application.yml文件配置
+- 更改application.yml文件配置
 ```yml
 url: jdbc:mysql://localhost:3306/gulimall_pms?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
 username: root
 password: root
 ```
 这里数据库名改为gulimall_pms,你想要生成的微服务对应的数据库名（商品服务
-3. 更改generator.properties配置
+- 更改generator.properties配置
 ```
 mainPath=com.sunxun
 package=com.sunxun.mall
@@ -146,8 +146,57 @@ author=sunxun
 email=sunxun1116@gmail.com
 tablePrefix=pms_  #表前缀
 ```
-4. 生成代码
+- 生成代码
 - 运行renren-generator中的RenrenApplication程序，打开浏览器查看结果。
 会有pms数据库的表格信息，勾选所有表名——生成代码——得到一个代码压缩包.
 
+3. 添加公共依赖
+- 创建mall-common 的maven module
+加依赖...
+```<version>0.0.1-SNAPSHOT</version>```这句话有什么错呢，没有在mall-product的pom.xml里加它，就会报```mall-common unknown```的错.
+- 在mall-common中添加公共类
+**mybatis-plus**
+**lombok**————这个不知道为什么不能自动寻找自动补全
+@Data: lombok的功能，会在编译的时候自动生成get, set方法
 
+- 整合MyBatis-Plus      
+    1). 导入依赖
+    ```xml
+    <dependency>
+        <groupId>com.baomidou</groupId>
+        <artifactId>mybatis-plus-boot-starter</artifactId>
+        <version>3.4.3</version>
+    </dependency>
+    ```
+    2). 配置        
+        a. 配置数据源       
+            - 导入数据库的驱动
+            - 在application.yml配置数据源相关信息
+        b. 配置MyBatis-Plus
+            - 使用@MapperScan（Mapper是用来干嘛的啊
+            - 告诉MyBatis-Plus, sql映射文件位置
+    ```yml
+    spring:
+        datasource:
+            username: root
+            password: root
+            url: jdbc:mysql://localhost:3306/gulimall_pms
+            driver-class-name: com.mysql.jdbc.Driver
+
+    mybatis-plus:
+        mapper-locations: classpath:/mapper/**/*.xml
+        global-config:
+            db-config:
+            id-type: auto   #主键自增
+    ```
+    
+
+
+**待解决**
+- mysql数据库表中文乱码问题
+- 运行app后访问数据```This application has no explicit mapping for /error, so you are seeing this as a fallback.```的问题
+**快捷键**
+idea
+shift+cmd+B: go to implementation
+
+[mybatis-plus](https://mybatis.plus/)
