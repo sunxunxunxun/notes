@@ -114,4 +114,40 @@ password: root
 最后打开浏览器，输入```localhost:8080/renren-fast```可看到访问信息.
 
 ### 六.安装前端开发环境
-- 已安装好nodejs
+- 已安装好nodejs和npm
+npm设置淘宝镜像
+```shell
+$ npm config set registry http://registry.npm.taobao.org/
+```
+- 安装依赖
+npm install报```Not Found - GET https://registry.npm.taobao.org/@types/strip-json-comments/-/strip-json-comments-3.0.0.tgz - [not_found] document not found```
+将nodejs[更换为10.16.3版本](https://www.cnblogs.com/conserdao/p/6876381.html)解决
+### 七.逆向工程搭建
+- 前后端联调启动
+后台运行renrenApplication, 前端输入```npm run dev```, 打开浏览器后登录系统.
+- 逆向生成代码
+通过renren-generator逆向生成项目基本代码，以product为例.
+1. 添加renren-generator文件夹
+clone renren-generator并添加到项目mall文件夹下.
+mall项目pom.xml文件中加入module.
+2. 更改application.yml文件配置
+```yml
+url: jdbc:mysql://localhost:3306/gulimall_pms?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+username: root
+password: root
+```
+这里数据库名改为gulimall_pms,你想要生成的微服务对应的数据库名（商品服务
+3. 更改generator.properties配置
+```
+mainPath=com.sunxun
+package=com.sunxun.mall
+moduleName=product
+author=sunxun
+email=sunxun1116@gmail.com
+tablePrefix=pms_  #表前缀
+```
+4. 生成代码
+- 运行renren-generator中的RenrenApplication程序，打开浏览器查看结果。
+会有pms数据库的表格信息，勾选所有表名——生成代码——得到一个代码压缩包.
+
+
