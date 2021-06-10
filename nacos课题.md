@@ -189,7 +189,64 @@ tablePrefix=pms_  #表前缀
             db-config:
             id-type: auto   #主键自增
     ```
-    
+
+### 八.用nacos管理微服务
+1. 在common中加入依赖
+[版本对照](https://github.com/alibaba/spring-cloud-alibaba/wiki/%E7%89%88%E6%9C%AC%E8%AF%B4%E6%98%8E)
+```xml
+<dependencies>
+    <dependency>
+        <groupId>com.alibaba.cloud</groupId>
+        <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+    </dependency>
+</dependencies>
+<dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+            <version>2021.1</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+    </dependencies>
+</dependencyManagement>
+```
+2. 注册服务<br>
+- 开启服务发现功能<br>
+在application中加入注解```@EnableDiscoveryClient```.
+- 在app中加入nacos server地址<br>
+以mall-order为例
+```yml
+spring:
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/gulimall_oms
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  application:
+    name: mall-order
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/**/*.xml
+  global-config:
+    db-config:
+      id-type: auto
+server:
+  port: 7000
+```
+- 启动nacos server<br>
+以standalone模式启动
+```shell
+$ sh startup.sh -m standalone
+```
+浏览器访问```127.0.0.1:8848/nacos```, 账号密码均为nacos.就可在ServiceManagement-Service List里看到新注册的服务.
+
+
 
 
 **待解决**
@@ -197,6 +254,11 @@ tablePrefix=pms_  #表前缀
 - ~~运行app后访问数据```This application has no explicit mapping for /error, so you are seeing this as a fallback.```的问题~~<br>
 **快捷键**
 idea
-shift+cmd+B: go to implementation
+opt+cmd+B: go to implementation
 
+**链接自查**
 [mybatis-plus](https://mybatis.plus/)
+[maven repository](https://mvnrepository.com/)
+[spring cloud](https://spring.io/projects/spring-cloud)
+[github:spring-cloud-alibaba]https://github.com/alibaba/spring-cloud-alibaba
+[doc:spring-cloud-alibaba](https://spring.io/projects/spring-cloud-alibaba)
