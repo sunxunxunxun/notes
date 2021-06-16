@@ -246,8 +246,69 @@ $ sh startup.sh -m standalone
 ```
 浏览器访问```127.0.0.1:8848/nacos```, 账号密码均为nacos.就可在ServiceManagement-Service List里看到新注册的服务.
 
+3. 微服务间的调用<br>
+测试user服务调用order服务，获取自身的order信息。
+利用feign做远程调用
+- 在user中引入open-feign<br>
+在其中引入，创建module的时候勾选了这两个，已存在。
+```xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-web</artifactId>
+</dependency>
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-openfeign</artifactId>
+</dependency>
+```
+- 编写接口<br>
+编写接口，并指明这个接口需要调用的远程服务及其请求。
+[接口示例]()
+- 开启远程调用功能
+[解决No Feign Client for loadBalancing defined的问题](https://blog.csdn.net/weixin_43556636/article/details/110653989)
 
+遇到了一个问题```feign.RetryableException: Read timed out executing GET http://mall-order/order/order/user/list] with root cause```, 还没解决。
 
+4. Nacos配置中心实例<br>
+- 引入依赖<br>
+```xml
+<dependency>
+    <groupId>com.alibaba.cloud</groupId>
+    <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+</dependency>
+```
+- 添加nacos配置<br>
+创建bootstrap.properties，并配置
+```
+spring.application.name=mall-order
+spring.cloud.nacos.config.server-addr=127.0.0.1:8848
+```
+- 在nacos中添加数据配置
+data-ID: appName.properties
+在其中添加配置
+- 动态获取配置
+@RefreshScope:动态获取并刷新配置
+@Value("${配置项名}):获取指定数据项
+
+注意：如果nacos配置中心和当前应用的配置文件中配置了相同的项，优先使用配置中心的配置。
+
+**一些细节**
+1. 命名空间：配置隔离<br>
+public: 保留空间，默认
+- 用来做开发、测试、发布等版本等环境隔离<br>
+若获取另一命名空间的同名数据，需设置：
+```
+spring.cloud.nacos.config.namespace=dev
+```
+- 为每个微服务创建命名空间<br>
+2. 配置集：所有配置的集合<br>
+3. 配置集ID：配置文件名<br>
+4. 配置分组<br>
+默认所有配置集都属于DEFAULT_GROUP
+```
+spring.cloud.nacos.config.group=0616
+```
+**每个微服务创建自己的命名空间，使用配置group区分环境(dev, test, release)**
 
 **待解决**
 - mysql数据库表中文乱码问题
