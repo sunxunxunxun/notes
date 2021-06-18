@@ -58,6 +58,11 @@ reverse(str.begin(), str.end());
 x = 10;
 s = to_string(x); // "10"
 ```
+#### 4. 截取子字符串
+```c++
+s.substr(pos, n);  // 包括pos
+s.substr(pos);
+```
 ### queue
 #### 1. 常用函数
 ```c++
