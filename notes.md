@@ -108,6 +108,9 @@ accumulate(arr.begin(), arr.end(), addtition);
 [atoi&stoi](https://blog.csdn.net/qq_33221533/article/details/82119031)
 相同点：都是将数字字符串转换成int；头文件都是ctring；
 不同点：atoi参数是const char*（如果是string的话需要用c_str转换），而stoi是const string*；atoi没有越界检查，越界了直接输出边界，而stoi越界了会runtime error
+### 3. __builtin_popcount(int num)
+计算num二进制位有多少个1.
+[二进制手表](https://leetcode-cn.com/problems/binary-watch/)
 
 # Python
 ### list
