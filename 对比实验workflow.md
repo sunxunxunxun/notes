@@ -29,6 +29,7 @@ docker内文件结构
 ### 2. **mythril**
 https://github.com/ConsenSys/mythril
 ```
+$ pip3 install mythril
 $ myth a -f <bytecodefile> (-o json | tee <outputfile>)
 ```
 ### 3. ~~**securify**~~
@@ -65,6 +66,7 @@ $ python2 ethir.py -s xx.evm -b
 
 ### 8. **Vandal**
 https://github.com/usyd-blockchain/vandal
+git clone 下来源码安装，[官方文档](https://github.com/usyd-blockchain/vandal/wiki/Getting-Started-with-Vandal)
 ```
 $ ../bin/analyze.sh ../examples/use_of_origin.hex ../datalog/demo_analyses.dl
 ```
