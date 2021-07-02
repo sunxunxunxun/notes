@@ -25,6 +25,10 @@ $ sudo /etc/init.d/networking restart
 $ ping baidu.com
 $ ping 随便一个ip addr
 ```
+查看防火墙状态
+```shell
+$ sudo ufw status
+```
 
 **Linu常用命令**
 #### 1. 查看文件夹下文件
