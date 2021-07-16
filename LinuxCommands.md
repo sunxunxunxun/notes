@@ -103,6 +103,7 @@ $ docker exec -it <dockerid> /bin/bash  # 运行两个终端
 ```shell
 $ pip3 install web3 -i https://pypi.tsinghua.edu.cn/simple
 ```
+可解决ProxyError的问题
 
 **Linux安装geth客户端（多版本场景）**
 - 如果只安装一个版本，直接apt安装。
