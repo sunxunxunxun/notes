@@ -192,3 +192,4 @@ local(局部代理):在git clone仓库内执行.
 [scp传输文件](https://www.cnblogs.com/jiangyao/archive/2011/01/26/1945570.html)     
 [vscode远程连接服务器开发]()
 [python virtualenv安装和使用](https://www.linuxidc.com/Linux/2019-08/160096.htm)
+[github密码变token的问题](https://blog.csdn.net/weixin_41010198/article/details/119698015)
