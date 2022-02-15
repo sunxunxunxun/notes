@@ -172,6 +172,8 @@ $ git config --local --unset http.proxy[https.proxy]
 ```
 local(局部代理):在git clone仓库内执行.
 
+[解决git账号密码验证问题:Please use a personal access token instead](https://www.cnblogs.com/plpeng/p/15175315.html)
+
 
 **本地服务器配置信息**
 
@@ -192,3 +194,4 @@ local(局部代理):在git clone仓库内执行.
 [scp传输文件](https://www.cnblogs.com/jiangyao/archive/2011/01/26/1945570.html)     
 [vscode远程连接服务器开发]()
 [python virtualenv安装和使用](https://www.linuxidc.com/Linux/2019-08/160096.htm)
+[latex语法](https://blog.csdn.net/qingdujun/article/details/80805613)
